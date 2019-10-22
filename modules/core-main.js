@@ -33,10 +33,10 @@ this.smilejs = {}
 if (this.document) loadModule("touchpolyfill.js")
 try {
 	smilejs.blockchain = loadModule("blockchain.js")
+	smilejs.proofOfWork = loadModule("proof-of-work.js")
 	loadModule("2-factor-auth.js")
 	smilejs.shaSupported = true
 } catch(e){
-	console.error(e)
 	smilejs.shaSupported = false
 }
 if (this.document){
@@ -51,6 +51,8 @@ smilejs.paper = loadModule("paper.js")
 } catch(e){
 
 }
+smilejs.compress = loadModule("compress.js")
+smilejs.loadCompressedLibrary = loadModule("load-compressed-lib.js")
 smilejs.ui.notify = function notify(location = "top-left", type = "plain", dialogContent, black = true) {
 			let dialog = document.createElement("div")
 			dialog.className = "notify " + location + " do-show font-notify"
@@ -179,4 +181,3 @@ smilejs.randomId = function randomId(length, chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ
         "modal": document.getElementById(id + "-modal")
       }
     }
-// TODO: INSERT UI CODE HERE

@@ -2,3 +2,11 @@ out.js
 out.min.js
 test.js
 .DS_Store
+package.json
+package-lock.json
+build/
+node_modules
+tmp
+build.sh
+.idea
+lib.compressed
